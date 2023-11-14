@@ -42,16 +42,16 @@ class VentanaAsignadoConfeccionista(tk.Tk):
             # Crear una nueva ventana para mostrar los detalles y los botones Aceptar y Denegar
             ventana_detalles = tk.Toplevel(self)
             ventana_detalles.title(f"Detalles de Asignación {tarea_id}")
-            ventana_detalles.geometry("300x200")
+            ventana_detalles.resizable(0,0)
 
             label_detalles = tk.Label(ventana_detalles, text=detalles, font=("Arial", 12))
-            label_detalles.pack(pady=10)
+            label_detalles.pack(pady=40)
 
             btn_aceptar = tk.Button(ventana_detalles, text="Aceptar", command=lambda: self.accion_tarea(tarea_id, "Aceptar"))
-            btn_aceptar.pack(side=tk.LEFT, padx=10)
+            btn_aceptar.pack(pady=5)
 
             btn_denegar = tk.Button(ventana_detalles, text="Denegar", command=lambda: self.accion_tarea(tarea_id, "Denegar"))
-            btn_denegar.pack(side=tk.RIGHT, padx=10)
+            btn_denegar.pack(pady=6)
 
     def accion_tarea(self, tarea_id, accion):
         # Aquí puedes realizar la lógica correspondiente, por ejemplo, actualizar el estado en la base de datos
@@ -84,4 +84,3 @@ if __name__ == "__main__":
 
     app = VentanaAsignadoConfeccionista(confeccionista_id)
     app.mainloop()
-

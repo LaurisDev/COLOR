@@ -15,7 +15,7 @@ class MenuPrincipal:
 
         # Botón para Coordinador
         btn_coordinador = tk.Button(self.ventana, text="Coordinador", command=self.abrir_coordinador)
-        btn_coordinador.pack( pady=40)
+        btn_coordinador.pack(pady=40)
 
         # Botón para Confeccionista
         btn_confeccionista = tk.Button(self.ventana, text="Confeccionista", command=self.abrir_confeccionista)

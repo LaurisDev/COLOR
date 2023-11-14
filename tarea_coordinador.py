@@ -49,7 +49,7 @@ class AsignarTareaApp:
         self.label_descripcion = tk.Label(self.ventana, text="Descripción:")
         self.label_descripcion.grid(row=2, column=0, padx=10, pady=10)
 
-        self.entry_descripcion = tk.Entry(self.ventana)
+        self.entry_descripcion = tk.Text(self.ventana, wrap=tk.WORD, width=30, height=5)
         self.entry_descripcion.grid(row=2, column=1, padx=10, pady=10)
 
         self.boton_asignar_tarea = tk.Button(self.ventana, text="Asignar Tarea", command=self.asignar_tarea)
@@ -69,7 +69,7 @@ class AsignarTareaApp:
     def asignar_tarea(self):
         confeccionista_seleccionado = self.combobox_confeccionista.get()
         tarea = self.entry_tarea.get()
-        descripcion = self.entry_descripcion.get()
+        descripcion = self.entry_descripcion.get("1.0", tk.END)
 
         if confeccionista_seleccionado and tarea:
             try:
@@ -94,4 +94,3 @@ class AsignarTareaApp:
 
 if __name__ == "__main__":
     app = AsignarTareaApp()
-
